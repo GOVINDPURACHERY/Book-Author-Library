@@ -14,4 +14,5 @@ urlpatterns = [
     path('addbook/',AddBookView,name='addbook'),
     path('bookupdate/<int:pk>/',BookUpdateView, name='updatebook'),
     
+    
 ]

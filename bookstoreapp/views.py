@@ -99,3 +99,12 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
+# def AuthorSearch(request):
+#     if request.method == 'POST':
+#         author_name = request.POST.get('search')
+#         author = Authors.objects.get(author_name=author_name)
+#         if author:
+#             return redirect('authorlist')
+#         else:
+#             messages.error(request,"no data exist")
+#     return render(request,'authors.html',{"author_search_data":author})
