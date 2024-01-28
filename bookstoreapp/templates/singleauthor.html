@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/singleauthor.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="detail_box">
+
+    <div class="individual_author_data">
+        <p>Author Name : {{detail_data.author_name}}</p>
+        <p>Email : {{detail_data.email}}</p>
+        <p>Phone Number : {{detail_data.phone}}</p>
+    </div>
+    
+    <div class="additional_features">
+        <div class="searchbar">
+            <input type="search" placeholder="Search Book..." id="search_bar">
+        </div>
+        <div class="add_button">
+            <button id="add_book"><a href="{% url 'addbook' %}">Add Book</a></button>
+        </div>
+    </div>
+    <div class="book_details">
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Book Name</th>
+                <th>Book Id</th>
+                <th>Created Date</th>
+                <th>Action</th>
+                <th>Status</th>
+            </tr>
+            {% for book in book_data %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.book_name}}</td>
+                <td>{{book.author_id}}</td>
+                <td>{{book.created_date}}</td>
+                <td><a href="{% url 'updatebook' book.id %}"><img id="update_icon" src="{% static 'icons/edit.png' %}"></a></td>
+                <td>{{book.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+{% endblock content %}

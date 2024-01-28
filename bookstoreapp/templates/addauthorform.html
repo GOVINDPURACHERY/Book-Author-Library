@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/addauthorform.css' %}">
+{% endblock %}
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Author Name" name="author_name" value="{{data.author_name}}">
+        <input type="text" placeholder="User Name" name="user_name" value="{{data.user_name}}">
+        <input type="email" placeholder="Email" name="email" value="{{data.email}}">
+        <input type="number" placeholder="Phone Number" name="phone" value="{{data.phone}}">
+        <div class="add_buttons">
+            <button id="add_button" type="submit">Add</button>
+            <a id="cancel_button" href="{% url 'authorlist' %}">Cancel</a>
+        </div>
+        
+    </form>
+
+
+{% endblock content %}

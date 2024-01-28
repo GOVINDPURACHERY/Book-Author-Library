@@ -1,0 +1,58 @@
+form{
+    position:relative;
+    height: 50%;
+    width: 40%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 15px;
+    padding: 2%;
+}
+input{
+    width: 96%;
+    border-radius: 15px;
+    margin-top: 20px;
+    height: 43px;
+    padding-left: 15px;
+    outline: none;
+    margin-bottom: 18px;
+}
+select{
+    width: 96%;
+    border-radius: 15px;
+    margin-top: 20px;
+    height: 43px;
+    padding-left: 15px;
+    outline: none;
+}
+.book_add_buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 38px;
+    padding-right: 20px;
+}
+#add_book{
+    background-color: blue;
+    height: 30px;
+    width: 100px;
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+    
+}
+#cancel_book{
+    background-color: blue;
+    height: 30px;
+    width: 100px;
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 5px;
+}
+#author_option_one{
+    display: none;
+    
+}
+

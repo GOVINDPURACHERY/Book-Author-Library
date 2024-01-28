@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/books.css' %}">
+{% endblock %}
+{% block content %}
+<div class="detail_box">
+    <div class="total_data">
+        <div class="total_authors">
+            <div class="total_authors_number">
+                <p>Total_Authors</p>
+                <h1>{{total_authors}}</h1>
+            </div>
+            <div class="pen_icon">
+                <img id="pen" src="{% static 'icons/pen.png' %}">
+            </div>
+        </div>
+        <div class="total_books">
+            <div class="total_books_number">
+                <p>Total_Books</p>
+                <h1>{{total_books}}</h1>
+            </div>
+            <div class="book_icon">
+                <img id="book" src="{% static 'icons/book.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="additional_features">
+        <div class="searchbar">
+            <form class="search_set" method = 'POST'>
+                {% csrf_token %}
+                <input type="search" placeholder="Search Books..." id="search_bar" name='search'>
+                <button type="submit"><img id="search_icon" src="{% static 'icons/search.png' %}"></button>
+            </form>
+        </div>
+        <div class="add_button">
+            <button id="add_book"><a href="{% url 'addbook' %}">Add Book</a></button>
+        </div>
+    </div>
+    <div class="book_details">
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th>Created Date</th>
+                <th>Action</th>
+                <th>Status</th>
+            </tr>
+            {% for book in book_data %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.book_name}}</td>
+                <td>{{book.author_id}}</td>
+                <td>{{book.created_date}}</td>
+                <td><a href="{% url 'updatebook' book.id %}"><img id="update_icon" src="{% static 'icons/edit.png' %}"></a></td>
+                <td>{{book.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock content %}

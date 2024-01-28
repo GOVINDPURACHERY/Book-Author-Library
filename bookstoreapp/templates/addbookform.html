@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/addbookform.css' %}">
+{% endblock %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <label>Book Name</label>
+    <input type="text" placeholder="Bookname" name="book_name" value="{{old_book_data.book_name}}">
+    <label>Author Name</label>
+    <select name="author_name_select">
+        <option id="author_option_one" selected>Choose Author...</option>
+        {% for i in authors_list %}
+        <option>{{i.author_name}}</option>
+        {% endfor %}
+    </select>
+    <div class="book_add_buttons">
+        <button id="add_book" type="submit">Add</button>
+        <a id="cancel_book" href="{% url 'booklist' %}">Cancel</a>
+    </div>
+</form>
+
+
+
+{% endblock content %}

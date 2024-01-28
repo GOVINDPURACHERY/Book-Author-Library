@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/authors.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="detail_box">
+    <div class="total_data">
+        <div class="total_authors">
+            <div class="total_authors_number">
+                <p>Total_Authors</p>
+                <h1>{{total_authors}}</h1>
+            </div>
+            <div class="pen_icon">
+                <img id="pen" src="{% static 'icons/pen.png' %}">
+            </div>
+        </div>
+        <div class="total_books">
+            <div class="total_books_number">
+
+                <p>Total_Books</p>
+                <h1>{{total_books}}</h1>
+            </div>
+            <div class="book_icon">
+                <img id="book" src="{% static 'icons/book.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="additional_features">
+        <div class="searchbar">
+            <form class="search_set" method = 'POST'>
+                {% csrf_token %}
+                <input type="search" placeholder="Search Author..." id="search_bar" name='search'>
+                <button type="submit"><img id="search_icon" src="{% static 'icons/search.png' %}"></button>
+            </form>
+        </div>
+        <div class="add_button">
+            <button id="add_author"><a href="{% url 'addauthorform' %}">Add Author</a></button>
+        </div>
+    </div>
+    <div class="author_details">
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Author Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th colspan="2">Action</th>
+                <th>Status</th>
+            </tr>
+            {% for author in author_data %}
+            <tr>
+                <td>{{author.id}}</td>
+                <td>{{author.author_name}}</td>
+                <td>{{author.user_name}}</td>
+                <td>{{author.email}}</td>
+                <td><a href="{% url 'authorupdate' author.id %}"><img id="edit_icon" src="{% static 'icons/edit.png' %}"></a></td>
+                <td><a href="{% url 'detail_view' author.id %}"><img id="eye_icon" src="{% static 'icons/eye.png' %}"></a></td>
+                <td>{{author.status}}</td>    
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock content %}

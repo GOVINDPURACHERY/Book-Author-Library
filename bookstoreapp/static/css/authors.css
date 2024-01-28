@@ -1,0 +1,173 @@
+.detail_box{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+.total_data{
+    width: 100%;
+    height: 20%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+.total_authors{
+    width: 40%;
+    height: 80%;
+    background-color: #98b7ed;
+    margin-top: 6px;
+    display: flex;
+}
+.total_authors_number{
+    width: 50%;
+    height: 100%;
+    
+}
+.pen_icon{
+    width: 50%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+#pen{
+    width: 100px;
+    height: 70px;
+    
+    margin-left: 40px;
+    margin-top: 6px;
+}
+.total_books{
+    width: 40%;
+    height: 80%;
+    background-color: #e66f8f;
+    margin-top: 6px;
+    display: flex;
+}
+.total_books_number{
+    width: 50%;
+    height: 100%;
+
+    
+}
+.book_icon{
+    width: 50%;
+    height: 100%;
+}
+#book{
+    width: 100px;
+    height: 70px; 
+    margin-top: 12px;
+    margin-left: 60px;
+}
+.additional_features{
+    width: 100%;
+    height: 10%;
+    background-color: #f1f1f1;
+    display: flex;
+}
+.searchbar{
+    width: 50%;
+    height: 100%;
+    /* background-color: azure; */
+    padding-top: 14px;
+    padding-left: 70px;
+}
+#search_bar{
+    width: 250px;
+    height: 30px;
+    border-radius: 24px;
+    border: none;
+    padding-left: 15px;
+    outline: none;
+
+}
+.add_button{
+    width: 50%;
+    height: 100%;
+    /* background-color: bisque; */
+    text-align: right;
+    padding-right: 69px;
+
+    
+}
+.add_button a{
+    text-decoration: none;
+    color: white;
+}
+#add_author{
+    width: 100px;
+    height: 27px;
+    background-color: #3EB2FD;
+    border-radius: 15px;
+    margin-top: 14px;
+    border: none;
+    
+}
+.author_details{
+    width: 100%;
+    height: 70%;
+    background-color: #f1f1f1;
+}
+table{
+    border: 2px solid;
+    border-collapse: collapse;
+    width: 90%; 
+    margin-left: 55px;
+    border-color: #d6caca;
+    
+}
+th{
+    border: 2px solid;
+    height: 50px;
+    border-color: #d6caca;
+    color: #694040
+    
+}
+td{
+    border: 2px solid;
+    text-align: center;
+    height: 50px;
+    border-color: #d6caca;
+    color: gray;
+    
+}
+.total_authors_number h1{
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.total_books_number h1{
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+}
+.total_authors_number p{
+    margin-top: 14px;
+    margin-left: 16px;
+    color: white;
+}
+.total_books_number p{
+    margin-top: 14px;
+    margin-left: 16px;
+    color: white;
+}
+#edit_icon{
+    width: 20px;
+    height: 20px;
+}
+#eye_icon{
+    width: 20px;
+    height: 20px;
+}
+#search_icon{
+    width: 15px;
+    height: 15px;
+    
+}
+.search_set button{
+    position: relative;
+    right: 31px;
+    top: 2px;
+    border: none;
+    background-color: white;
+}

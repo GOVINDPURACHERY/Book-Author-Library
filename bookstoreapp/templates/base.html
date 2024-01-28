@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="outer_container">
+        <div class="navbar">
+            <div class="logo">
+
+            </div>
+            <div class="nav_links">
+                <ul>
+                    <li>Welcome</li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_box">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="{% url 'authorlist' %}">Author</a></li>
+                    <li><a href="{% url 'booklist' %}">Books</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+            <div class="main_content">
+                {% block content %}
+                {% endblock content %}  
+            </div>
+        </div>    
+    </div>
+   
+</body>
+</html>
