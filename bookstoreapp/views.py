@@ -2,7 +2,7 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, ListView
 from .models import *
 from django.contrib import auth, messages
 from django.urls import reverse_lazy
@@ -41,11 +41,23 @@ def LoginPageView(request):
 
 
 
-def AuthorListView(request):
-    author_list = Authors.objects.all()
-    total_books = Books.objects.count()
-    total_authors = Authors.objects.count()
-    return render(request,'authors.html',{"author_data":author_list,"total_books":total_books,"total_authors":total_authors})
+# def AuthorListView(request):
+#     author_list = Authors.objects.all()
+#     total_books = Books.objects.count()
+#     total_authors = Authors.objects.count()
+#     return render(request,'authors.html',{"author_data":author_list,"total_books":total_books,"total_authors":total_authors})
+class AuthorListViewClass(ListView):
+    model = Authors
+    fields = '__all__'
+    template_name = 'authors.html'
+    context_object_name = 'author_data'
+    # paginate_by = 3
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["total_books"] = Books.objects.count()
+        context["total_authors"] = Authors.objects.count() 
+        return context
+    
 
 def BookListView(request):
     book_list = Books.objects.all()

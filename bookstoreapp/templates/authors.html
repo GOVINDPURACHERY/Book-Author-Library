@@ -49,6 +49,7 @@
                 <th>Email</th>
                 <th colspan="2">Action</th>
                 <th>Status</th>
+                
             </tr>
             {% for author in author_data %}
             <tr>
@@ -58,9 +59,10 @@
                 <td>{{author.email}}</td>
                 <td><a href="{% url 'authorupdate' author.id %}"><img id="edit_icon" src="{% static 'icons/edit.png' %}"></a></td>
                 <td><a href="{% url 'detail_view' author.id %}"><img id="eye_icon" src="{% static 'icons/eye.png' %}"></a></td>
-                <td>{{author.status}}</td>    
+                <td>{{author.status}}</td>   
             </tr>
             {% endfor %}
+            
             
         </table>
     </div>
